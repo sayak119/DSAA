@@ -1,0 +1,10 @@
+x=input('enter path of image: ');
+img=imread(x);
+y=input('Enter resize amount: ');
+cimg=RESIZENN(img,y);
+figure; imshow(cimg, []);
+cimg2=RESIZEBL(img,y);
+figure; imshow(cimg2, []);
+figure; imshowpair(img,cimg,'montage');
+figure; imshowpair(img,cimg2,'montage');
+figure; imshowpair(cimg,cimg2,'montage');
