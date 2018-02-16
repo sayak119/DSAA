@@ -5,15 +5,15 @@ m=[0 0 0; 1 1 1; -1 -1 -1]; %[-1 -1 -1; 2 2 2; -1 -1 -1];
 % applying convolution
 convImg=convn(i,m);
 % plotting
-figure; subplot(1,2,1); imshow(i); title('original'); subplot(1,2,2); imshow(convImg, []);title('filtered');
+figure; subplot(1,2,1); imshow(uint8(i)); title('original'); subplot(1,2,2); imshow(uint8(convImg), []);title('filtered');
 
-img=imread('blur.jpg');
+img=uint8(imread('blur.jpg'));
 cimg=convn(img,m);
 cimg2=convn(img,m');
-imwrite(cimg,'blur1.jpg');
-imwrite(cimg2,'blur2.jpg');
+imwrite(uint8(cimg),'blur1.jpg');
+imwrite(uint8(cimg2),'blur2.jpg');
 img2=imadd(cimg,cimg2);
-imwrite(img2,'blur_add.jpg');
+imwrite(uint8(img2),'blur_add.jpg');
 img_double=im2double(img);
 img_double=padarray(img_double,[1 1],0,'both');
 img3=imadd(img2,img_double);
