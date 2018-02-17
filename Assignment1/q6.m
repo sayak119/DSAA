@@ -1,6 +1,6 @@
 % Read images
-subimg=imread('/root/hw2/DSAA/Assignment1/F1.jpg');
-parimg=imread('/root/hw2/DSAA/Assignment1/Faces.jpg');
+subimg=imread('F1.jpg');
+parimg=imread('Faces.jpg');
 
 [subx, suby, subch]=size(subimg); % size of image F1
 [parx, pary, parch]=size(parimg); % size of image Faces
